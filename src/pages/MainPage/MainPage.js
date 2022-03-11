@@ -1,79 +1,39 @@
-import React from 'react';
-import myStyle from './MainPage.module.scss';
-import { Grid, Box, Container } from '@mui/material';
-import ResponsiveAppBar from '../../component/ResponsiveAppBar';
-import Carousel from '../../component/Carousel';
-import SearchBar from '../../component/SearchBar';
-import SearchBar2 from '../../component/SearchBar2';
-import { Categorie } from '../../component/Categorie';
-import Card1 from '../../component/Card';
-
+import React from "react";
+import { Grid, Box, Container } from "@mui/material";
+import ResponsiveAppBar from "../../component/ResponsiveAppBar";
+import SearchBar2 from "../../component/SearchBar2";
+import { Categorie } from "../../component/Categorie";
+import Card from "../../component/Card";
 
 const MainPage = () => {
   return (
-    <div className='main'>
-      <Grid container justifyContent="center">
+    <div className="main">
+      <Container
+        sx={{
+          minWidth: { xs: "100%", md: "1200px" },
+          maxWidth: { xs: "100%", md: "2560px" },
+        }}
+        disableGutters={true}
+        container
+        justifyContent="center"
+      >
         <ResponsiveAppBar />
-        <Carousel />
         <SearchBar2 />
         <Categorie />
-        <Grid container justifyContent="center">
-            <Box
-              justifyContent="center"
-              alignItems="center"
-              sx={{
-                p: "10px",
-                backgroundColor: '#fff',
-                display: 'flex',
-              }}>
-              <Card1 />
-            </Box>
-            <Box
-              justifyContent="center"
-              alignItems="center"
-              sx={{
-                p: "10px",
-                backgroundColor: '#fff',
-                display: 'flex',
-              }}>
-              <Card1 />
-            </Box>
-            <Box
-              justifyContent="center"
-              alignItems="center"
-              sx={{
-                p: "10px",
-                backgroundColor: '#fff',
-                display: 'flex',
-              }}>
-              <Card1 />
-            </Box>
-            <Box
-              justifyContent="center"
-              alignItems="center"
-              sx={{
-                p: "10px",
-                backgroundColor: '#fff',
-                display: 'flex',
-              }}>
-              <Card1 />
-            </Box>
-        </Grid>
+        <Card/>
         <Box
           justifyContent="center"
           alignItems="center"
           sx={{
             mt: "200px",
-            width: "100%",
+            width: "100",
             height: "300px",
-            backgroundColor: 'gray',
-          }}>
-        </Box>
-
-      </Grid>
-
+            backgroundColor: "gray",
+          }}
+        ></Box>
+      </Container>
     </div>
-  )
+  );
 };
 
 export default MainPage;
